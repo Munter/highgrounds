@@ -23,16 +23,6 @@ var app = new (function () {
 
 ko.applyBindings(app);
 
-function cells(data) {
-    var units = [];
-
-    console.log(data.feed.entry);
-
-    data.feed.entry.forEach(function (item) {
-        //console.log(item.content);
-    });
-}
-
 function list(data) {
     var order = [],
         units = [],
