@@ -3,14 +3,22 @@
 <html>
     <head>
         <title>Highgrounds data experiment</title>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
 
-        <input type="text" data-bind="value: filter, valueUpdate: 'keyup'" placeholder="filter">
-        Results: <span data-bind="text: displayed().length"></span>
+        <form class="pure-form">
+            <fieldset>
+                <legend>Highgrounds units</legend>
 
-        <table>
+                <input type="text" data-bind="value: filter, valueUpdate: 'keyup'" placeholder="filter">
+                Results: <span data-bind="text: displayed().length"></span>
+            </fieldset>
+        </form>
+
+        <table class="pure-table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -24,7 +32,7 @@
                 </tr>
             </thead>
             <tbody data-bind="foreach: displayed">
-                <tr>
+                <tr data-bind="css: { 'pure-table-odd': $index() % 2 === 1 }">
                     <td data-bind="text: name"></td>
                     <td data-bind="text: rarity"></td>
                     <td data-bind="text: $data['class']"></td>
