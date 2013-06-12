@@ -1,3 +1,17 @@
 body {
     padding: 20px;
 }
+
+th > span::after {
+    content: '▼';
+    margin-left: 10px;
+    visibility: hidden;
+}
+
+th.sorted > span::after {
+    visibility: visible;
+}
+
+.ascending th.sorted > span::after {
+    content: '▲';
+}

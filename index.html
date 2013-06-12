@@ -2,6 +2,7 @@
 
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Highgrounds data experiment</title>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
         <link rel="stylesheet" href="style.css">
@@ -9,7 +10,7 @@
 
     <body>
 
-        <form class="pure-form">
+        <form class="pure-form" onsubmit="return false">
             <fieldset>
                 <legend>Highgrounds units</legend>
 
@@ -19,14 +20,26 @@
         </form>
 
         <table class="pure-table">
-            <thead>
+            <thead data-bind="css: { 'ascending': lastSort().ascending }">
                 <tr>
-                    <th>Name</th>
-                    <th>Rarity</th>
-                    <th>Class</th>
-                    <th>Resource</th>
-                    <th>Buy</th>
-                    <th>Sell</th>
+                    <th data-bind="click: sortText.bind($data, 'name'), css: { 'sorted': lastSort().key === 'name' }">
+                        <span>Name</span>
+                    </th>
+                    <th data-bind="click: sortText.bind($data, 'rarity'), css: { 'sorted': lastSort().key === 'rarity' }">
+                        <span>Rarity</span>
+                    </th>
+                    <th data-bind="click: sortText.bind($data, 'class'), css: { 'sorted': lastSort().key === 'class' }">
+                        <span>Class</span>
+                    </th>
+                    <th data-bind="click: sortText.bind($data, 'resource'), css: { 'sorted': lastSort().key === 'resource' }">
+                        <span>Resource</span>
+                    </th>
+                    <th data-bind="click: sortNumeric.bind($data, 'buy'), css: { 'sorted': lastSort().key === 'buy' }">
+                        <span>Buy</span>
+                    </th>
+                    <th data-bind="click: sortNumeric.bind($data, 'sell'), css: { 'sorted': lastSort().key === 'sell' }">
+                        <span>Sell</span>
+                    </th>
                     <th>Front row</th>
                     <th>Back row</th>
                 </tr>
