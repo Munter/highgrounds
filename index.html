@@ -7,6 +7,9 @@
 
     <body>
 
+        <input type="text" data-bind="value: filter, valueUpdate: 'keyup'" placeholder="filter">
+        Results: <span data-bind="text: displayed().length"></span>
+
         <table>
             <thead>
                 <tr>
@@ -20,7 +23,7 @@
                     <th>Back row</th>
                 </tr>
             </thead>
-            <tbody data-bind="foreach: units">
+            <tbody data-bind="foreach: displayed">
                 <tr>
                     <td data-bind="text: name"></td>
                     <td data-bind="text: rarity"></td>

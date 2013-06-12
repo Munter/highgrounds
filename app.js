@@ -1,6 +1,25 @@
-var app = {
-    units: ko.observableArray()
-};
+var app = new (function () {
+    var self = this;
+
+    self.units = ko.observableArray();
+    self.filter = ko.observable('');
+    self.displayed = ko.computed(function () {
+        var needle = self.filter().trim(),
+            units = self.units();
+
+        if (!needle) {
+            return units;
+        }
+
+        return units.filter(function (unit) {
+            return Object.keys(unit).some(function (key) {
+                return unit[key].toLowerCase().indexOf(needle) !== -1;
+            });
+        });
+    });
+
+    return self;
+})();
 
 ko.applyBindings(app);
 
