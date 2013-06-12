@@ -3,7 +3,7 @@ body {
 }
 
 th > span::after {
-    content: '▼';
+    content: '\25BC';
     margin-left: 10px;
     visibility: hidden;
 }
@@ -13,5 +13,5 @@ th.sorted > span::after {
 }
 
 .ascending th.sorted > span::after {
-    content: '▲';
+    content: '\25B2';
 }
