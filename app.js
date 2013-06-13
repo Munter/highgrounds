@@ -80,9 +80,13 @@ var app = new (function () {
     };
 
     self.armyAdd = function (item) {
-        var copy = ko.toJS(item);
+        if (self.army().filter(function (unit) {
+            return item.name === unit.name;
+        }).length < 2) {
+            var copy = ko.toJS(item);
 
-        self.army.push(copy);
+            self.army.push(copy);
+        }
     };
 
     self.armyRemove = function (item) {
