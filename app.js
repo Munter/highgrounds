@@ -13,19 +13,28 @@ var app = new (function () {
     self.filter = ko.observable('');
     self.sortFn = ko.observable();
     self.displayed = ko.computed(function () {
-        var needle = self.filter().trim(),
+        var needle = self.filter().toLowerCase().trim(),
             units = self.units(),
             sortFn = self.sortFn(),
-            result;
+            result,
+            matcher = function (obj, needle) {
+                return Object.keys(obj).some(function (key) {
+                    if (typeof obj[key].some === 'function') {
+                        return obj[key].some(function (obj) {
+                            return matcher(obj, needle);
+                        });
+                    } else {
+                        return String(obj[key]).toLowerCase().indexOf(needle) !== -1;
+                    }
+                });
+            };
 
         if (!needle) {
             result = units;
         } else {
             result = units.filter(function (unit) {
                 return needle.split(' ').every(function (subNeedle) {
-                    return Object.keys(unit).some(function (key) {
-                        return String(unit[key]).toLowerCase().indexOf(subNeedle) !== -1;
-                    });
+                    return matcher(unit, subNeedle);
                 });
             });
         }
