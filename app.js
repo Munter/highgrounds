@@ -89,6 +89,14 @@ var app = new (function () {
         self.army.remove(item);
     };
 
+    self.share = ko.computed(function () {
+        var army = self.army().map(function (unit) {
+            return unit.name;
+        });
+
+        location.hash = army.join(',');
+    });
+
     return self;
 })();
 
