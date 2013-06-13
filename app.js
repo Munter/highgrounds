@@ -80,6 +80,10 @@ var app = new (function () {
     };
 
     self.armyAdd = function (item) {
+        if (self.army().length > 27) {
+            return;
+        }
+
         if (self.army().filter(function (unit) {
             return item.name === unit.name;
         }).length < 2) {
