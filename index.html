@@ -58,7 +58,9 @@
             </thead>
             <tbody data-bind="foreach: displayed">
                 <tr>
-                    <td><i class="icon" data-bind="css: 'icon-' + rarityClass, attr: { title: rarity }"></i></td>
+                    <td class="rarity">
+                        <i class="icon" data-bind="css: 'icon-' + rarityClass, attr: { title: rarity }"></i>
+                    </td>
                     <td><span data-bind="text: name"></span></td>
                     <td data-bind="text: $data['class']"></td>
                     <td><span data-bind="text: buy, css: 'inline-' + resourceClass"></span></td>

@@ -23,6 +23,18 @@ th.sorted > span::after {
   padding-top: 0.8em !important;
   padding-bottom: 0.8em !important;
 }
+.rarity {
+  text-align: center;
+  background-image: -webkit-radial-gradient(center, circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 15px);
+  /* Chrome10+,Safari5.1+ */
+
+  background-image: -ms-radial-gradient(center, circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 15px);
+  /* IE10+ */
+
+  background-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 15px);
+  /* W3C */
+
+}
 .icon {
   display: inline-block;
   vertical-align: middle;
