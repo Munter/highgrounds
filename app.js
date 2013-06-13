@@ -8,7 +8,7 @@ if ('localStorage' in window && window['localStorage'] !== null) {
 var app = new (function () {
     var self = this;
 
-    self.units = ko.observableArray(data);
+    self.units = ko.observableArray();
     self.army = ko.observableArray();
     self.filter = ko.observable('');
     self.sortFn = ko.observable();
@@ -89,13 +89,31 @@ var app = new (function () {
         self.army.remove(item);
     };
 
-    self.share = ko.computed(function () {
-        var army = self.army().map(function (unit) {
+    self.army.subscribe(function (units) {
+        var army = units.map(function (unit) {
             return unit.name;
         });
 
         location.hash = army.join(',');
     });
+
+    self.load = ko.observable(location.hash.length > 1 ? location.hash.replace('#', '').split(',') : undefined);
+
+    self.units.subscribe(function (units) {
+        var names = self.load();
+
+        if (names) {
+            self.army.removeAll();
+
+            self.load().forEach(function (name) {
+                self.armyAdd(ko.utils.arrayFirst(units, function (item) {
+                    return item.name === name;
+                }));
+            });
+        }
+    });
+
+    self.units(data);
 
     return self;
 })();
