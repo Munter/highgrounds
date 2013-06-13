@@ -1,7 +1,14 @@
+var data = [];
+if ('localStorage' in window && window['localStorage'] !== null) {
+    if (localStorage.highgrounds) {
+        data = JSON.parse(localStorage.highgrounds);
+    }
+}
+
 var app = new (function () {
     var self = this;
 
-    self.units = ko.observableArray();
+    self.units = ko.observableArray(data);
     self.filter = ko.observable('');
     self.sortFn = ko.observable();
     self.displayed = ko.computed(function () {
@@ -120,9 +127,13 @@ function list(data) {
         units.push(unit);
     });
 
-    app.units(units.map(function (unit) {
+    units = units.map(function (unit) {
         unit.resourceClass = unit.resource.toLowerCase();
 
         return unit;
-    }));
+    });
+
+    localStorage.highgrounds = JSON.stringify(units);
+
+    app.units(units);
 }
