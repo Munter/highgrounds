@@ -190,17 +190,24 @@ function list(data) {
         order.forEach(function (key) {
             var value = entry[key].$t,
                 extrakey,
-                match;
+                match,
+                type;
 
             if (Number(value)) {
                 value = Number(value);
             }
 
             if (map[key].indexOf(' row') !== -1) {
+                type = value.replace(/\d| |^x/gi, '').toLowerCase();
+
+                if (type === 'windfall') {
+                    type += unit.resource.charAt(0);
+                }
+
                 unit[map[key]] = [{
                     text: value,
                     amount: parseInt(value, 10),
-                    type: value.replace(/\d| |^x/gi, '').toLowerCase()
+                    type: type.toLowerCase()
                 }];
             } else {
                 unit[map[key]] = value;
@@ -213,10 +220,16 @@ function list(data) {
                     extrakey = match[0].split(', ').pop();
                     if (map[key].indexOf(' row') !== -1) {
                         value = entry['gsx$' + extrakey].$t;
+                        type = value.replace(/\d| |^x/gi, '').toLowerCase();
+
+                        if (type === 'windfall') {
+                            type += unit.resource.charAt(0);
+                        }
+
                         unit[map[key]].push({
                             text: value,
                             amount: parseInt(value, 10),
-                            type: value.replace(/\d| |^x/gi, '').toLowerCase()
+                            type: type.toLowerCase()
                         });
                     } else {
                         unit[map[key]] = value.replace('\n', ', ') + entry['gsx$' + extrakey].$t;
