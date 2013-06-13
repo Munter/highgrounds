@@ -3,6 +3,11 @@ body {
     background: #f9f9f6;
 }
 
+.army {
+    float: right;
+    width: 300px;
+}
+
 th > span::after {
     content: '\25BC';
     margin-left: 10px;

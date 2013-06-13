@@ -9,6 +9,7 @@ var app = new (function () {
     var self = this;
 
     self.units = ko.observableArray(data);
+    self.army = ko.observableArray();
     self.filter = ko.observable('');
     self.sortFn = ko.observable();
     self.displayed = ko.computed(function () {
@@ -76,6 +77,16 @@ var app = new (function () {
             key: key,
             ascending: ascending
         });
+    };
+
+    self.armyAdd = function (item) {
+        var copy = ko.toJS(item);
+
+        self.army.push(copy);
+    };
+
+    self.armyRemove = function (item) {
+        self.army.remove(item);
     };
 
     return self;
