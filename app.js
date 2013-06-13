@@ -22,8 +22,10 @@ var app = new (function () {
             result = units;
         } else {
             result = units.filter(function (unit) {
-                return Object.keys(unit).some(function (key) {
-                    return String(unit[key]).toLowerCase().indexOf(needle) !== -1;
+                return needle.split(' ').every(function (subNeedle) {
+                    return Object.keys(unit).some(function (key) {
+                        return String(unit[key]).toLowerCase().indexOf(subNeedle) !== -1;
+                    });
                 });
             });
         }
