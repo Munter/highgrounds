@@ -1,5 +1,5 @@
 var data = [];
-if ('localStorage' in window && window['localStorage'] !== null) {
+if ('localStorage' in window && window.localStorage !== null) {
     if (localStorage.highgrounds) {
         data = JSON.parse(localStorage.highgrounds);
     }
@@ -155,10 +155,8 @@ var app = new (function () {
         }
 
         if (e.keyCode === 8) {
-            self.filter(self.filter().slice(0, -1));
-
-            if (e.target.nodeName === 'INPUT') {
-                e.preventDefault();
+            if (e.target.nodeName !== 'INPUT') {
+                self.filter(self.filter().slice(0, -1));
             }
         }
 
