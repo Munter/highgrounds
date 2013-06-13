@@ -123,6 +123,36 @@ var app = new (function () {
 
     self.units(data);
 
+    document.body.addEventListener('keypress', function (e) {
+        var typedChar = String.fromCharCode(e.charCode);
+
+        if (/[a-z ]/i.test(typedChar)) {
+            self.filter(self.filter() + typedChar);
+            if (e.target.nodeName === 'INPUT') {
+                e.preventDefault();
+            }
+        }
+    }, false);
+
+    document.body.addEventListener('keydown', function (e) {
+        if (e.keyCode === 27) {
+            self.filter('');
+
+            if (e.target.nodeName === 'INPUT') {
+                e.preventDefault();
+            }
+        }
+
+        if (e.keyCode === 8) {
+            self.filter(self.filter().slice(0, -1));
+
+            if (e.target.nodeName === 'INPUT') {
+                e.preventDefault();
+            }
+        }
+
+    }, false);
+
     return self;
 })();
 
