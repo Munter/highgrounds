@@ -65,7 +65,7 @@ th.sorted > span::after {
 .row-front,
 .row-back {
     position: relative;
-    margin: 4px (@rowHeight / 2);
+    margin: 4px 0;
     padding-left: 36px;
     padding-right: 10px;
     color: white;
@@ -88,14 +88,20 @@ th.sorted > span::after {
     border: (@rowHeight / 2) solid transparent;
 }
 
-.row-back:before {
-    left: -@rowHeight;
-    border-right-color: #999;
+.row-back {
+    margin-left: @rowHeight / 2;
+    &:before {
+        left: -@rowHeight;
+        border-right-color: #999;
+    }
 }
 
-.row-front:after {
-    right: -@rowHeight;
-    border-left-color: #999;
+.row-front {
+    margin-right: @rowHeight / 2;
+    &:after {
+        right: -@rowHeight;
+        border-left-color: #999;
+    }
 }
 
 .ability-attack,
@@ -108,7 +114,7 @@ th.sorted > span::after {
 .ability-rampage,
 .ability-revenge,
 .ability-wolfpack,
-.ability-xdeathbolt
+.ability-deathbolt
 {
     background-color: #c7522e;
 
@@ -154,7 +160,7 @@ th.sorted > span::after {
 .ability-knightking,
 .ability-skelking,
 .ability-steal,
-.ability-xbarbberserk,
+.ability-barbberserk,
 .ability-zealot
 {
     background-color: #b427ef;
@@ -255,13 +261,13 @@ th.sorted > span::after {
 .ability-atksquire { background-image: url(img/abilities/AttackSquire.png); }
 .ability-bolt { background-image: url(img/abilities/Bolt.png); }
 .ability-dogpack { background-image: url(img/abilities/Dogpack.png); }
-.ability-foxpack { background-image: url(img/abilities/Foxpack.png); }
+.ability-foxpack { background-image: url(img/abilities/FoxPack.png); }
 .ability-honor { background-image: url(img/abilities/Honor.png); }
 .ability-spearhead { background-image: url(img/abilities/Spearhead.png); }
 .ability-rampage { background-image: url(img/abilities/Rampage.png); }
 .ability-revenge { background-image: url(img/abilities/Revenge.png); }
 .ability-wolfpack { background-image: url(img/abilities/Wolfpack.png); }
-.ability-xdeathbolt { background-image: url(img/abilities/Deathbolt.png); }
+.ability-deathbolt { background-image: url(img/abilities/Deathbolt.png); }
 .ability-wood { background-image: url(img/abilities/Wood.png); }
 .ability-arrow { background-image: url(img/abilities/Arrow.png); }
 .ability-fireball { background-image: url(img/abilities/Fireball.png); }
@@ -274,7 +280,7 @@ th.sorted > span::after {
 .ability-knightking { background-image: url(img/abilities/KnightKing.png); }
 .ability-skelking { background-image: url(img/abilities/SkelKing.png); }
 .ability-steal { background-image: url(img/abilities/Steal.png); }
-.ability-xbarbberserk { background-image: url(img/abilities/BarbBerserk.png); }
+.ability-barbberserk { background-image: url(img/abilities/BarbBerserk.png); }
 .ability-zealot { background-image: url(img/abilities/Zealot.png); }
 .ability-windfallw { background-image: url(img/abilities/WindfallW.png); }
 .ability-recruit { background-image: url(img/abilities/Recruit.png); }

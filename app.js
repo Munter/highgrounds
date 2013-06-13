@@ -155,7 +155,7 @@ function list(data) {
                 unit[map[key]] = [{
                     text: value,
                     amount: parseInt(value, 10),
-                    type: value.replace(/\d| /g, '').toLowerCase()
+                    type: value.replace(/\d| |^x/gi, '').toLowerCase()
                 }];
             } else {
                 unit[map[key]] = value;
@@ -171,7 +171,7 @@ function list(data) {
                         unit[map[key]].push({
                             text: value,
                             amount: parseInt(value, 10),
-                            type: value.replace(/\d| /g, '').toLowerCase()
+                            type: value.replace(/\d| |^x/gi, '').toLowerCase()
                         });
                     } else {
                         unit[map[key]] = value.replace('\n', ', ') + entry['gsx$' + extrakey].$t;
