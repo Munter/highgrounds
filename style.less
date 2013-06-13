@@ -59,18 +59,23 @@ th.sorted > span::after {
     background: url(img/resource/wood.png) right center no-repeat;
 }
 
+@rowHeight: 34px;
+
 /* Abilities */
 .row-front,
 .row-back {
     position: relative;
-    margin: 4px 14px;
-    padding-left: 30px;
+    margin: 4px (@rowHeight / 2);
+    padding-left: 36px;
     padding-right: 10px;
     color: white;
-    height: 28px;
-    line-height: 28px;
+    height: @rowHeight;
+    line-height: @rowHeight;
     background-color: #999;
     white-space: nowrap;
+
+    background-repeat: no-repeat;
+    background-position: 3px center;
 }
 
 .row-front::after,
@@ -80,16 +85,16 @@ th.sorted > span::after {
     content:'';
     width: 0;
     height: 0;
-    border: 14px solid transparent;
+    border: (@rowHeight / 2) solid transparent;
 }
 
 .row-back:before {
-    left: -28px;
+    left: -@rowHeight;
     border-right-color: #999;
 }
 
 .row-front:after {
-    right: -28px;
+    right: -@rowHeight;
     border-left-color: #999;
 }
 
@@ -115,13 +120,15 @@ th.sorted > span::after {
     }
 }
 
-.ability-wood {
-    background-color: #67cf36;
+.ability-wood,
+.ability-windfallw
+{
+    background-color: #5abc28;
     &:after {
-        border-left-color: #67cf36;
+        border-left-color: #5abc28;
     }
     &:before {
-        border-right-color: #67cf36;
+        border-right-color: #5abc28;
     }
 }
 
@@ -156,17 +163,6 @@ th.sorted > span::after {
     }
     &:before {
         border-right-color: #b427ef;
-    }
-}
-
-.ability-windfallw
-{
-    background-color: #5abc28;
-    &:after {
-        border-left-color: #5abc28;
-    }
-    &:before {
-        border-right-color: #5abc28;
     }
 }
 
@@ -254,3 +250,45 @@ th.sorted > span::after {
         border-right-color: #323232;
     }
 }
+
+.ability-attack { background-image: url(img/abilities/Attack.png); }
+.ability-atksquire { background-image: url(img/abilities/AttackSquire.png); }
+.ability-bolt { background-image: url(img/abilities/Bolt.png); }
+.ability-dogpack { background-image: url(img/abilities/Dogpack.png); }
+.ability-foxpack { background-image: url(img/abilities/Foxpack.png); }
+.ability-honor { background-image: url(img/abilities/Honor.png); }
+.ability-spearhead { background-image: url(img/abilities/Spearhead.png); }
+.ability-rampage { background-image: url(img/abilities/Rampage.png); }
+.ability-revenge { background-image: url(img/abilities/Revenge.png); }
+.ability-wolfpack { background-image: url(img/abilities/Wolfpack.png); }
+.ability-xdeathbolt { background-image: url(img/abilities/Deathbolt.png); }
+.ability-wood { background-image: url(img/abilities/Wood.png); }
+.ability-arrow { background-image: url(img/abilities/Arrow.png); }
+.ability-fireball { background-image: url(img/abilities/Fireball.png); }
+.ability-wound { background-image: url(img/abilities/Wound.png); }
+.ability-barbking { background-image: url(img/abilities/BarbKing.png); }
+.ability-duotydus { background-image: url(img/abilities/DuoTydus.png); }
+.ability-duoraeus { background-image: url(img/abilities/DuoRaeus.png); }
+.ability-duorainer { background-image: url(img/abilities/DuoRainer.png); }
+.ability-farmerking { background-image: url(img/abilities/FarmerKing.png); }
+.ability-knightking { background-image: url(img/abilities/KnightKing.png); }
+.ability-skelking { background-image: url(img/abilities/SkelKing.png); }
+.ability-steal { background-image: url(img/abilities/Steal.png); }
+.ability-xbarbberserk { background-image: url(img/abilities/BarbBerserk.png); }
+.ability-zealot { background-image: url(img/abilities/Zealot.png); }
+.ability-windfallw { background-image: url(img/abilities/WindfallW.png); }
+.ability-recruit { background-image: url(img/abilities/Recruit.png); }
+.ability-transform { background-image: url(img/abilities/Transform.png); }
+.ability-healing { background-image: url(img/abilities/Healing.png); }
+.ability-paladin { background-image: url(img/abilities/Paladin.png); }
+.ability-dorment { background-image: url(img/abilities/Dorment.png); }
+.ability-frail { background-image: url(img/abilities/Frail.png); }
+.ability-knockout { background-image: url(img/abilities/Knockout.png); }
+.ability-defense { background-image: url(img/abilities/Defense.png); }
+.ability-protect { background-image: url(img/abilities/Protect.png); }
+.ability-gold { background-image: url(img/abilities/Gold.png); }
+.ability-windfallg { background-image: url(img/abilities/WindfallG.png); }
+.ability-crystal { background-image: url(img/abilities/Crystal.png); }
+.ability-winfallc { background-image: url(img/abilities/WinfallC.png); }
+.ability-burnout { background-image: url(img/abilities/Burnout.png); }
+.ability-renegade { background-image: url(img/abilities/Renegade.png); }
