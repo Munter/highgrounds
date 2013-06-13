@@ -1,0 +1,408 @@
+body {
+  padding: 20px;
+  background: #f9f9f6;
+  font-weight: bold;
+}
+.army {
+  float: right;
+  width: 300px;
+}
+th > span::after {
+  content: '\25BC';
+  margin-left: 10px;
+  visibility: hidden;
+}
+th.sorted > span::after {
+  visibility: visible;
+}
+.ascending th.sorted > span::after {
+  content: '\25B2';
+}
+.row {
+  vertical-align: top;
+  padding-top: 0.8em !important;
+  padding-bottom: 0.8em !important;
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 16px;
+  width: 16px;
+}
+/* Standalone icons */
+.icon-common {
+  background-image: url(img/rarity/Common.png);
+}
+.icon-uncommon {
+  background-image: url(img/rarity/Uncommon.png);
+}
+.icon-rare {
+  background-image: url(img/rarity/Rare.png);
+}
+.icon-ultrarare {
+  background-image: url(img/rarity/Ultra%20Rare.png);
+}
+/* Span icons */
+.inline-gold {
+  padding-right: 20px;
+  background: url(img/resource/gold.png) right center no-repeat;
+}
+.inline-crystal {
+  padding-right: 20px;
+  background: url(img/resource/crystal.png) right center no-repeat;
+}
+.inline-wood {
+  padding-right: 20px;
+  background: url(img/resource/wood.png) right center no-repeat;
+}
+/* Abilities */
+.row-front,
+.row-back {
+  position: relative;
+  margin: 4px 0;
+  padding-left: 31px;
+  padding-right: 10px;
+  color: white;
+  height: 28px;
+  line-height: 28px;
+  background-color: #999;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 20px;
+}
+.row-front::after,
+.row-back::before {
+  position: absolute;
+  top: 0;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 14px solid transparent;
+}
+.row-back {
+  margin-left: 14px;
+}
+.row-back:before {
+  left: -28px;
+  border-right-color: #999;
+}
+.row-front {
+  margin-right: 14px;
+}
+.row-front:after {
+  right: -28px;
+  border-left-color: #999;
+}
+.ability-attack,
+.ability-atksquire,
+.ability-bolt,
+.ability-dogpack,
+.ability-foxpack,
+.ability-honor,
+.ability-spearhead,
+.ability-rampage,
+.ability-revenge,
+.ability-wolfpack,
+.ability-deathbolt {
+  background-color: #c7522e;
+}
+.ability-attack:after,
+.ability-atksquire:after,
+.ability-bolt:after,
+.ability-dogpack:after,
+.ability-foxpack:after,
+.ability-honor:after,
+.ability-spearhead:after,
+.ability-rampage:after,
+.ability-revenge:after,
+.ability-wolfpack:after,
+.ability-deathbolt:after {
+  border-left-color: #c7522e;
+}
+.ability-attack:before,
+.ability-atksquire:before,
+.ability-bolt:before,
+.ability-dogpack:before,
+.ability-foxpack:before,
+.ability-honor:before,
+.ability-spearhead:before,
+.ability-rampage:before,
+.ability-revenge:before,
+.ability-wolfpack:before,
+.ability-deathbolt:before {
+  border-right-color: #c7522e;
+}
+.ability-wood,
+.ability-windfallw {
+  background-color: #5abc28;
+}
+.ability-wood:after,
+.ability-windfallw:after {
+  border-left-color: #5abc28;
+}
+.ability-wood:before,
+.ability-windfallw:before {
+  border-right-color: #5abc28;
+}
+.ability-arrow,
+.ability-fireball,
+.ability-wound {
+  background-color: #bababa;
+}
+.ability-arrow:after,
+.ability-fireball:after,
+.ability-wound:after {
+  border-left-color: #bababa;
+}
+.ability-arrow:before,
+.ability-fireball:before,
+.ability-wound:before {
+  border-right-color: #bababa;
+}
+.ability-barbking,
+.ability-duotydus,
+.ability-duoraeus,
+.ability-duorainer,
+.ability-farmerking,
+.ability-knightking,
+.ability-skelking,
+.ability-steal,
+.ability-barbberserk,
+.ability-zealot {
+  background-color: #b427ef;
+}
+.ability-barbking:after,
+.ability-duotydus:after,
+.ability-duoraeus:after,
+.ability-duorainer:after,
+.ability-farmerking:after,
+.ability-knightking:after,
+.ability-skelking:after,
+.ability-steal:after,
+.ability-barbberserk:after,
+.ability-zealot:after {
+  border-left-color: #b427ef;
+}
+.ability-barbking:before,
+.ability-duotydus:before,
+.ability-duoraeus:before,
+.ability-duorainer:before,
+.ability-farmerking:before,
+.ability-knightking:before,
+.ability-skelking:before,
+.ability-steal:before,
+.ability-barbberserk:before,
+.ability-zealot:before {
+  border-right-color: #b427ef;
+}
+.ability-recruit,
+.ability-transform {
+  background-color: #c68953;
+}
+.ability-recruit:after,
+.ability-transform:after {
+  border-left-color: #c68953;
+}
+.ability-recruit:before,
+.ability-transform:before {
+  border-right-color: #c68953;
+}
+.ability-healing,
+.ability-paladin {
+  background-color: #99cc54;
+}
+.ability-healing:after,
+.ability-paladin:after {
+  border-left-color: #99cc54;
+}
+.ability-healing:before,
+.ability-paladin:before {
+  border-right-color: #99cc54;
+}
+.ability-dorment,
+.ability-frail,
+.ability-knockout {
+  background-color: #20201c;
+}
+.ability-dorment:after,
+.ability-frail:after,
+.ability-knockout:after {
+  border-left-color: #20201c;
+}
+.ability-dorment:before,
+.ability-frail:before,
+.ability-knockout:before {
+  border-right-color: #20201c;
+}
+.ability-defense,
+.ability-protect {
+  background-color: #7897fd;
+}
+.ability-defense:after,
+.ability-protect:after {
+  border-left-color: #7897fd;
+}
+.ability-defense:before,
+.ability-protect:before {
+  border-right-color: #7897fd;
+}
+.ability-gold,
+.ability-windfallg {
+  background-color: #e9c21e;
+}
+.ability-gold:after,
+.ability-windfallg:after {
+  border-left-color: #e9c21e;
+}
+.ability-gold:before,
+.ability-windfallg:before {
+  border-right-color: #e9c21e;
+}
+.ability-crystal,
+.ability-winfallc {
+  background-color: #3396e2;
+}
+.ability-crystal:after,
+.ability-winfallc:after {
+  border-left-color: #3396e2;
+}
+.ability-crystal:before,
+.ability-winfallc:before {
+  border-right-color: #3396e2;
+}
+.ability-burnout,
+.ability-renegade {
+  background-color: #323232;
+}
+.ability-burnout:after,
+.ability-renegade:after {
+  border-left-color: #323232;
+}
+.ability-burnout:before,
+.ability-renegade:before {
+  border-right-color: #323232;
+}
+.ability-attack {
+  background-image: url(img/abilities/Attack.png);
+}
+.ability-atksquire {
+  background-image: url(img/abilities/AttackSquire.png);
+}
+.ability-bolt {
+  background-image: url(img/abilities/Bolt.png);
+}
+.ability-dogpack {
+  background-image: url(img/abilities/Dogpack.png);
+}
+.ability-foxpack {
+  background-image: url(img/abilities/FoxPack.png);
+}
+.ability-honor {
+  background-image: url(img/abilities/Honor.png);
+}
+.ability-spearhead {
+  background-image: url(img/abilities/Spearhead.png);
+}
+.ability-rampage {
+  background-image: url(img/abilities/Rampage.png);
+}
+.ability-revenge {
+  background-image: url(img/abilities/Revenge.png);
+}
+.ability-wolfpack {
+  background-image: url(img/abilities/Wolfpack.png);
+}
+.ability-deathbolt {
+  background-image: url(img/abilities/Deathbolt.png);
+}
+.ability-wood {
+  background-image: url(img/abilities/Wood.png);
+}
+.ability-arrow {
+  background-image: url(img/abilities/Arrow.png);
+}
+.ability-fireball {
+  background-image: url(img/abilities/Fireball.png);
+}
+.ability-wound {
+  background-image: url(img/abilities/Wound.png);
+}
+.ability-barbking {
+  background-image: url(img/abilities/BarbKing.png);
+}
+.ability-duotydus {
+  background-image: url(img/abilities/DuoTydus.png);
+}
+.ability-duoraeus {
+  background-image: url(img/abilities/DuoRaeus.png);
+}
+.ability-duorainer {
+  background-image: url(img/abilities/DuoRainer.png);
+}
+.ability-farmerking {
+  background-image: url(img/abilities/FarmerKing.png);
+}
+.ability-knightking {
+  background-image: url(img/abilities/KnightKing.png);
+}
+.ability-skelking {
+  background-image: url(img/abilities/SkelKing.png);
+}
+.ability-steal {
+  background-image: url(img/abilities/Steal.png);
+}
+.ability-barbberserk {
+  background-image: url(img/abilities/BarbBerserk.png);
+}
+.ability-zealot {
+  background-image: url(img/abilities/Zealot.png);
+}
+.ability-windfallw {
+  background-image: url(img/abilities/WindfallW.png);
+}
+.ability-recruit {
+  background-image: url(img/abilities/Recruit.png);
+}
+.ability-transform {
+  background-image: url(img/abilities/Transform.png);
+}
+.ability-healing {
+  background-image: url(img/abilities/Healing.png);
+}
+.ability-paladin {
+  background-image: url(img/abilities/Paladin.png);
+}
+.ability-dorment {
+  background-image: url(img/abilities/Dorment.png);
+}
+.ability-frail {
+  background-image: url(img/abilities/Frail.png);
+}
+.ability-knockout {
+  background-image: url(img/abilities/Knockout.png);
+}
+.ability-defense {
+  background-image: url(img/abilities/Defense.png);
+}
+.ability-protect {
+  background-image: url(img/abilities/Protect.png);
+}
+.ability-gold {
+  background-image: url(img/abilities/Gold.png);
+}
+.ability-windfallg {
+  background-image: url(img/abilities/WindfallG.png);
+}
+.ability-crystal {
+  background-image: url(img/abilities/Crystal.png);
+}
+.ability-winfallc {
+  background-image: url(img/abilities/WinfallC.png);
+}
+.ability-burnout {
+  background-image: url(img/abilities/Burnout.png);
+}
+.ability-renegade {
+  background-image: url(img/abilities/Renegade.png);
+}
