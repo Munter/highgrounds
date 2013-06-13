@@ -49,8 +49,8 @@
                     <th data-bind="click: sortNumeric.bind($data, 'sell'), css: { 'sorted': lastSort().key === 'sell' }">
                         <span>Sell</span>
                     </th>
-                    <th>Front row</th>
                     <th>Back row</th>
+                    <th>Front row</th>
                     <th></th>
                 </tr>
             </thead>
@@ -61,11 +61,11 @@
                     <td data-bind="text: $data['class']"></td>
                     <td><span data-bind="text: buy, css: 'inline-' + resourceClass"></span></td>
                     <td><span data-bind="text: sell, css: 'inline-' + resourceClass"></span></td>
-                    <td data-bind="foreach: $data['front row']">
-                        <div data-bind="css: type, text: text"></div>
-                    </td>
                     <td data-bind="foreach: $data['back row']">
-                        <div data-bind="css: type, text: text"></div>
+                        <div class="row-back" data-bind="css: 'ability-' + type, text: text"></div>
+                    </td>
+                    <td data-bind="foreach: $data['front row']">
+                        <div class="row-front" data-bind="css: 'ability-' + type, text: text"></div>
                     </td>
                     <td><button class="pure-button" data-bind="click: $parent.armyAdd.bind($parent)">Add</button></td>
                 </tr>

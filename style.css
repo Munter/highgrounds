@@ -1,6 +1,7 @@
 body {
     padding: 20px;
     background: #f9f9f6;
+    font-weight: bold;
 }
 
 .army {
@@ -56,4 +57,127 @@ th.sorted > span::after {
 .inline-wood {
     padding-right: 20px;
     background: url(img/resource/wood.png) right center no-repeat;
+}
+
+/* Abilities */
+.row-front,
+.row-back {
+    position: relative;
+    margin: 4px 14px;
+    padding-left: 30px;
+    padding-right: 10px;
+    color: white;
+    height: 28px;
+    line-height: 28px;
+    background-color: #999;
+    white-space: nowrap;
+}
+
+.row-front::after,
+.row-back::before {
+    position: absolute;
+    top: 0;
+    content:'';
+    width: 0;
+    height: 0;
+    border: 14px solid transparent;
+}
+
+.row-back::before {
+    left: -28px;
+    border-right-color: #999;
+}
+
+.row-front::after {
+    right: -28px;
+    border-left-color: #999;
+}
+
+.ability-attack,
+.ability-atksquire,
+.ability-bolt,
+.ability-dogpack,
+.ability-foxpack,
+.ability-honor,
+.ability-spearhead,
+.ability-rampage,
+.ability-revenge,
+.ability-wolfpack,
+.ability-xdeathbolt
+{
+    background-color: #c7522e;
+}
+
+.ability-wood {
+    background-color: #67cf36;
+}
+
+
+.ability-arrow,
+.ability-fireball,
+.ability-wound
+{
+    background-color: #bababa;
+}
+
+.ability-barbking,
+.ability-duotydus,
+.ability-duoraeus,
+.ability-duorainer,
+.ability-farmerking,
+.ability-knightking,
+.ability-skelking,
+.ability-steal,
+.ability-xbarbberserk,
+.ability-zealot
+{
+    background-color: #b427ef;
+}
+
+.ability-windfallw
+{
+    background-color: #5abc28;
+}
+
+.ability-recruit,
+.ability-transform
+{
+    background-color: #c68953;
+}
+
+.ability-healing,
+.ability-paladin
+{
+    background-color: #99cc54;
+}
+
+.ability-dorment,
+.ability-frail,
+.ability-knockout
+{
+    background-color: #20201c;
+}
+
+.ability-defense,
+.ability-protect
+{
+    background-color: #7897fd;
+}
+
+.ability-gold,
+.ability-windfallg
+{
+    background-color: #e9c21e;
+}
+
+.ability-crystal,
+.ability-winfallc
+{
+    background-color: #3396e2;
+}
+
+.ability-burnout,
+.ability-renegade
+{
+    background-color: #323232;
 }
