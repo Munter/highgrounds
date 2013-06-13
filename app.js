@@ -151,16 +151,31 @@ function list(data) {
                 value = Number(value);
             }
 
-            unit[map[key]] = value;
+            if (map[key].indexOf(' row') !== -1) {
+                unit[map[key]] = [{
+                    text: value,
+                    amount: parseInt(value, 10),
+                    type: value.replace(/\d| /g, '')
+                }];
+            } else {
+                unit[map[key]] = value;
+            }
 
             if (isNaN(value) && value.indexOf('\n') !== -1) {
                 match = entry.content.$t.match(new RegExp(value + ', [^:]+'));
 
                 if (match) {
                     extrakey = match[0].split(', ').pop();
-                    unit[map[key]] = value.replace('\n', ', ') + entry['gsx$' + extrakey].$t;
-                } else {
-                    unit[map[key]] = value.replace('\n', '');
+                    if (map[key].indexOf(' row') !== -1) {
+                        value = entry['gsx$' + extrakey].$t;
+                        unit[map[key]].push({
+                            text: value,
+                            amount: parseInt(value, 10),
+                            type: value.replace(/\d /g, '')
+                        });
+                    } else {
+                        unit[map[key]] = value.replace('\n', ', ') + entry['gsx$' + extrakey].$t;
+                    }
                 }
             }
         });

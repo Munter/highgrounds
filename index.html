@@ -56,8 +56,12 @@
                     <td data-bind="text: $data['class']"></td>
                     <td><span data-bind="text: buy, css: 'inline-' + resourceClass"></span></td>
                     <td><span data-bind="text: sell, css: 'inline-' + resourceClass"></span></td>
-                    <td data-bind="text: $data['front row']"></td>
-                    <td data-bind="text: $data['back row']"></td>
+                    <td data-bind="foreach: $data['front row']">
+                        <div data-bind="css: type, text: text"></div>
+                    </td>
+                    <td data-bind="foreach: $data['back row']">
+                        <div data-bind="css: type, text: text"></div>
+                    </td>
                     <td><button class="pure-button" data-bind="click: $parent.armyAdd.bind($parent)">Add</button></td>
                 </tr>
             </tbody>
