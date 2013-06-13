@@ -1,5 +1,6 @@
 body {
     padding: 20px;
+    background: #f9f9f6;
 }
 
 th > span::after {
@@ -14,4 +15,40 @@ th.sorted > span::after {
 
 .ascending th.sorted > span::after {
     content: '\25B2';
+}
+
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+}
+
+/* Standalone icons */
+.icon-common {
+    background-image: url(img/rarity/Common.png);
+}
+.icon-uncommon {
+    background-image: url(img/rarity/Uncommon.png);
+}
+.icon-rare {
+    background-image: url(img/rarity/Rare.png);
+}
+.icon-ultrarare {
+    background-image: url(img/rarity/Ultra%20Rare.png);
+}
+
+/* Span icons */
+.inline-gold {
+    padding-right: 20px;
+    background: url(img/resource/gold.png) right center no-repeat;
+}
+.inline-crystal {
+    padding-right: 20px;
+    background: url(img/resource/crystal.png) right center no-repeat;
+}
+.inline-wood {
+    padding-right: 20px;
+    background: url(img/resource/wood.png) right center no-repeat;
 }

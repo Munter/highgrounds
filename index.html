@@ -5,10 +5,11 @@
         <meta charset="utf-8">
         <title>Highgrounds data experiment</title>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
+        <link rel="stylesheet" href="pure-skin-highgrounds.css">
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
+    <body class="pure-skin-highgrounds">
 
         <form class="pure-form" onsubmit="return false">
             <fieldset>
@@ -19,20 +20,17 @@
             </fieldset>
         </form>
 
-        <table class="pure-table">
+        <table class="pure-table pure-table-striped">
             <thead data-bind="css: { 'ascending': lastSort().ascending }">
                 <tr>
+                    <th data-bind="click: sortText.bind($data, 'rarity'), css: { 'sorted': lastSort().key === 'rarity' }">
+                        <span></span>
+                    </th>
                     <th data-bind="click: sortText.bind($data, 'name'), css: { 'sorted': lastSort().key === 'name' }">
                         <span>Name</span>
                     </th>
-                    <th data-bind="click: sortText.bind($data, 'rarity'), css: { 'sorted': lastSort().key === 'rarity' }">
-                        <span>Rarity</span>
-                    </th>
                     <th data-bind="click: sortText.bind($data, 'class'), css: { 'sorted': lastSort().key === 'class' }">
                         <span>Class</span>
-                    </th>
-                    <th data-bind="click: sortText.bind($data, 'resource'), css: { 'sorted': lastSort().key === 'resource' }">
-                        <span>Resource</span>
                     </th>
                     <th data-bind="click: sortNumeric.bind($data, 'buy'), css: { 'sorted': lastSort().key === 'buy' }">
                         <span>Buy</span>
@@ -45,13 +43,12 @@
                 </tr>
             </thead>
             <tbody data-bind="foreach: displayed">
-                <tr data-bind="css: { 'pure-table-odd': $index() % 2 === 1 }">
-                    <td data-bind="text: name"></td>
-                    <td data-bind="text: rarity"></td>
+                <tr>
+                    <td><i class="icon" data-bind="css: 'icon-' + rarityClass, attr: { title: rarity }"></i></td>
+                    <td><span data-bind="text: name"></span></td>
                     <td data-bind="text: $data['class']"></td>
-                    <td data-bind="text: resource"></td>
-                    <td data-bind="text: buy"></td>
-                    <td data-bind="text: sell"></td>
+                    <td><span data-bind="text: buy, css: 'inline-' + resourceClass"></span></td>
+                    <td><span data-bind="text: sell, css: 'inline-' + resourceClass"></span></td>
                     <td data-bind="text: $data['front row']"></td>
                     <td data-bind="text: $data['back row']"></td>
                 </tr>

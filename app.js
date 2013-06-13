@@ -90,7 +90,8 @@ function list(data) {
 
     entries.forEach(function (entry) {
         var unit = {
-            rarity: entry.title.$t
+            rarity: entry.title.$t,
+            rarityClass: entry.title.$t.replace(' ', '').toLowerCase()
         };
 
         order.forEach(function (key) {
@@ -119,5 +120,9 @@ function list(data) {
         units.push(unit);
     });
 
-    app.units(units);
+    app.units(units.map(function (unit) {
+        unit.resourceClass = unit.resource.toLowerCase();
+
+        return unit;
+    }));
 }
