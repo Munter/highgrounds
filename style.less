@@ -23,6 +23,12 @@ th.sorted > span::after {
     content: '\25B2';
 }
 
+.row {
+    vertical-align: top;
+    padding-top: 0.8em !important;
+    padding-bottom: 0.8em !important;
+}
+
 
 .icon {
     display: inline-block;
@@ -59,14 +65,14 @@ th.sorted > span::after {
     background: url(img/resource/wood.png) right center no-repeat;
 }
 
-@rowHeight: 34px;
+@rowHeight: 28px;
 
 /* Abilities */
 .row-front,
 .row-back {
     position: relative;
     margin: 4px 0;
-    padding-left: 36px;
+    padding-left: @rowHeight + 3;
     padding-right: 10px;
     color: white;
     height: @rowHeight;
@@ -75,7 +81,8 @@ th.sorted > span::after {
     white-space: nowrap;
 
     background-repeat: no-repeat;
-    background-position: 3px center;
+    background-position: 5px center;
+    background-size: 20px;
 }
 
 .row-front::after,
