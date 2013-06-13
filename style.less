@@ -83,12 +83,12 @@ th.sorted > span::after {
     border: 14px solid transparent;
 }
 
-.row-back::before {
+.row-back:before {
     left: -28px;
     border-right-color: #999;
 }
 
-.row-front::after {
+.row-front:after {
     right: -28px;
     border-left-color: #999;
 }
@@ -106,10 +106,23 @@ th.sorted > span::after {
 .ability-xdeathbolt
 {
     background-color: #c7522e;
+
+    &:after {
+        border-left-color: #c7522e;
+    }
+    &:before {
+        border-right-color: #c7522e;
+    }
 }
 
 .ability-wood {
     background-color: #67cf36;
+    &:after {
+        border-left-color: #67cf36;
+    }
+    &:before {
+        border-right-color: #67cf36;
+    }
 }
 
 
@@ -118,6 +131,12 @@ th.sorted > span::after {
 .ability-wound
 {
     background-color: #bababa;
+    &:after {
+        border-left-color: #bababa;
+    }
+    &:before {
+        border-right-color: #bababa;
+    }
 }
 
 .ability-barbking,
@@ -132,23 +151,47 @@ th.sorted > span::after {
 .ability-zealot
 {
     background-color: #b427ef;
+    &:after {
+        border-left-color: #b427ef;
+    }
+    &:before {
+        border-right-color: #b427ef;
+    }
 }
 
 .ability-windfallw
 {
     background-color: #5abc28;
+    &:after {
+        border-left-color: #5abc28;
+    }
+    &:before {
+        border-right-color: #5abc28;
+    }
 }
 
 .ability-recruit,
 .ability-transform
 {
     background-color: #c68953;
+    &:after {
+        border-left-color: #c68953;
+    }
+    &:before {
+        border-right-color: #c68953;
+    }
 }
 
 .ability-healing,
 .ability-paladin
 {
     background-color: #99cc54;
+    &:after {
+        border-left-color: #99cc54;
+    }
+    &:before {
+        border-right-color: #99cc54;
+    }
 }
 
 .ability-dorment,
@@ -156,28 +199,58 @@ th.sorted > span::after {
 .ability-knockout
 {
     background-color: #20201c;
+    &:after {
+        border-left-color: #20201c;
+    }
+    &:before {
+        border-right-color: #20201c;
+    }
 }
 
 .ability-defense,
 .ability-protect
 {
     background-color: #7897fd;
+    &:after {
+        border-left-color: #7897fd;
+    }
+    &:before {
+        border-right-color: #7897fd;
+    }
 }
 
 .ability-gold,
 .ability-windfallg
 {
     background-color: #e9c21e;
+    &:after {
+        border-left-color: #e9c21e;
+    }
+    &:before {
+        border-right-color: #e9c21e;
+    }
 }
 
 .ability-crystal,
 .ability-winfallc
 {
     background-color: #3396e2;
+    &:after {
+        border-left-color: #3396e2;
+    }
+    &:before {
+        border-right-color: #3396e2;
+    }
 }
 
 .ability-burnout,
 .ability-renegade
 {
     background-color: #323232;
+    &:after {
+        border-left-color: #323232;
+    }
+    &:before {
+        border-right-color: #323232;
+    }
 }
