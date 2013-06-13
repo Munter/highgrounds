@@ -137,7 +137,7 @@ var app = new (function () {
     document.body.addEventListener('keypress', function (e) {
         var typedChar = String.fromCharCode(e.charCode);
 
-        if (/[a-z ]/i.test(typedChar)) {
+        if (/[a-z \d]/i.test(typedChar)) {
             self.filter(self.filter() + typedChar);
             if (e.target.nodeName === 'INPUT') {
                 e.preventDefault();
