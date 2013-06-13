@@ -260,15 +260,15 @@ th.sorted > span::after {
   border-right-color: #e9c21e;
 }
 .ability-crystal,
-.ability-winfallc {
+.ability-windfallc {
   background-color: #3396e2;
 }
 .ability-crystal:after,
-.ability-winfallc:after {
+.ability-windfallc:after {
   border-left-color: #3396e2;
 }
 .ability-crystal:before,
-.ability-winfallc:before {
+.ability-windfallc:before {
   border-right-color: #3396e2;
 }
 .ability-burnout,
@@ -393,6 +393,9 @@ th.sorted > span::after {
 }
 .ability-windfallg {
   background-image: url(img/abilities/WindfallG.png);
+}
+.ability-windfallc {
+  background-image: url(img/abilities/WindfallC.png);
 }
 .ability-crystal {
   background-image: url(img/abilities/Crystal.png);
